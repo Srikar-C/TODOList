@@ -1,6 +1,3 @@
-# View
-
-https://srikar-c.github.io/TODOList/
 
 # Getting Started with Create React App
 
