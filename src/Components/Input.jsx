@@ -1,5 +1,6 @@
 import { useState } from "react"
 import AddItem from "./AddItem";
+import "./Input.css";
 
 export default function Input(){
 
@@ -27,21 +28,21 @@ export default function Input(){
     return (
         <div className="inputadd">
             <input 
-            onChange={handleChange} 
-            type="text" 
-            placeholder="Enter the To Do List" 
-            value={input}
+                onChange={handleChange} 
+                type="text" 
+                placeholder="Enter the To Do List" 
+                value={input}
             />
-            <button onClick={addItem}>Add</button>
+            <button className="addbtn" onClick={addItem}>Add</button>
             <div>
             <h1 className="ListHead">Your Lists</h1>
                 <ul>
                     {item.map((todoitem,index)=>(
                         <AddItem 
-                        key={index} 
-                        id={index} 
-                        text={todoitem} 
-                        onChecked={deleteItem}
+                            key={index} 
+                            id={index} 
+                            text={todoitem} 
+                            onChecked={deleteItem}
                         />
                     ))}
                 </ul>

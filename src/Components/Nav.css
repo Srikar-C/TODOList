@@ -1,0 +1,29 @@
+.nav{
+    display: flex;
+    background-color: #F0DE36;
+    box-shadow: 1px 2px 5px grey;
+}
+
+.nav-left{
+    float: left;
+    flex-basis: 75%;
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+}
+.nav-left h2{
+    text-decoration: none;
+    border-style: none;
+    margin: 20px 50px;
+    color: black;
+}
+.nav-right{
+    flex-basis: 25%;
+    float: right;
+    justify-content: space-evenly;
+}
+.nav-right span{
+    margin: 20px 50px;
+    font-size: 30px;
+    cursor: pointer;
+}
