@@ -1,0 +1,49 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #fad961;
+  background-image: linear-gradient(90deg, #fad961 0%, #f76b1c 100%);
+  height: 10vh;
+  align-items: center;
+  font-size: 30px;
+  position: relative;
+}
+.drop,
+.drop2 {
+  display: none;
+}
+.navigation * {
+  color: white;
+}
+@media only screen and (max-width: 414px) {
+  .drop {
+    display: flex;
+  }
+  .info,
+  .add {
+    display: none;
+  }
+}
+@media only screen and (min-width: 415px) and (max-width: 800px) {
+  .drop {
+    display: none;
+  }
+  .drop2 {
+    display: none;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  .drop2 {
+    display: none;
+  }
+  .drop {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .drop2,
+  .drop {
+    display: none;
+  }
+}

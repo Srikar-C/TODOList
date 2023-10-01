@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  background-color: #00dbde;
+  background-image: linear-gradient(209deg, #00dbde 0%, #fc00ff 100%);
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.container h1 {
+  font-size: 40px;
+}
+.form {
+  display: flex;
+  justify-content: space-evenly;
+  background: linear-gradient(
+    45deg,
+    rgb(198, 56, 226),
+    rgb(48, 167, 207),
+    rgb(85, 167, 194)
+  );
+  padding: 20px;
+}
+.form * {
+  border: 1px solid black;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  border-radius: 20px;
+  font-size: 30px;
+}
+.form button:hover {
+  color: brown;
+  cursor: pointer;
+  background-color: white;
+  transform: scale(1.02);
+  text-transform: uppercase;
+}
+.list {
+  width: 80%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 675px) {
+  .container {
+    width: 100%;
+    font-size: 20px;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+      135deg,
+      rgb(101, 114, 233),
+      rgb(58, 129, 201),
+      rgb(78, 162, 231)
+    );
+  }
+  .form * {
+    margin: 5px;
+  }
+}

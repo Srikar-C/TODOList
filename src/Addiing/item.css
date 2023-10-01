@@ -1,0 +1,38 @@
+.item-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10%;
+}
+.item-list button {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: transparent;
+  color: white;
+
+  font-weight: 700;
+  border-radius: 20%;
+}
+.item-list button:hover {
+  text-transform: uppercase;
+  border-radius: 20px;
+  transform: scale(1.03);
+  cursor: pointer;
+  border: 1px solid white;
+  background: linear-gradient(
+    rgb(10, 192, 147),
+    rgb(36, 158, 214),
+    rgb(43, 195, 255)
+  );
+}
+
+@media only screen and (min-width: 320px) and (max-width: 675px) {
+  .item-list {
+    font-size: 15px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .item-list button {
+    margin-right: -30px;
+  }
+}
