@@ -3,6 +3,10 @@
   justify-content: space-between;
   align-items: center;
   margin-left: 10%;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  cursor: pointer;
 }
 .item-list button {
   border: 1px solid black;
@@ -24,6 +28,12 @@
     rgb(36, 158, 214),
     rgb(43, 195, 255)
   );
+}
+.viewstart{
+  display: flex;
+}
+.viewlast{
+  display: none;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 675px) {

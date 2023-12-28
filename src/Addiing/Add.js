@@ -10,7 +10,9 @@ function Add() {
     const date = today.getDate();
     return `${year}-${month}-${date}`;
   }
+  const [time,setTime] = useState((new Date).getHours()+":"+(new Date()).getMinutes());
   const [date, setDate] = useState(getDate());
+  
   function handleDate(event) {
     setDate(event.target.value);
   }
@@ -19,38 +21,59 @@ function Add() {
     setText(event.target.value);
   }
   const [data, setData] = useState([]);
+  const [dupData,setDupdata] = useState([]);
   function handleData(event) {
     event.preventDefault();
     setData((prevData) => {
-      return [...prevData, "Text is " + text + " Date is " + date];
+      if(text===""){
+        return [...prevData,date+" => " + time+ " => Nothing to do."];
+      }
+      else {
+        return [...prevData,date+" => " + time+ " => "+text];
+      }  
+    });
+    setDupData((prevData) => {
+      if(text===""){
+        return [...prevData,date+" => " + time+ " => Nothing to do."];
+      }
+      else {
+        return [...prevData,date+" => " + time+ " => "+text];
+      }  
     });
     setDate(getDate());
     setText("");
   }
-  function onDelete(props) {
-    setData((prevData) => {
-      return prevData.filter((item, index) => {
-        return index !== props;
+  function onDelete(id) {
+    console.log(id);
+    setData((prevData)=>{
+      return prevData.filter((item, key) => {
+        console.log("loop: "+key+":"+item);
+        return index !== id;
       });
     });
   }
+  function handleTime(event){
+    setTime(event.target.value);
+  }
+  
   return (
     <div className="container">
       <h1>TO DO LIST</h1>
       <form className="form">
         <input type="date" onChange={handleDate} value={date} />
+        <input type="time" onChange={handleTime} value={time}/>
         <input
           type="text"
           onChange={handleText}
           value={text}
           placeholder="Enter text"
           style={{ color: "white" }}
-        />
+        />        
         <button onClick={handleData}>Add</button>
       </form>
       <div className="list">
         {data.map((item, index) => (
-          <Item id={index} value={item} onChecked={onDelete} />
+          <Item key={index} id={index} value={item} onChecked={onDelete} />
         ))}
       </div>
     </div>
